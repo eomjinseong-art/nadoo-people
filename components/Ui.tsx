@@ -13,9 +13,9 @@ export function VerdictBadge({ v }: { v: Verdict }) {
   return <span className={`inline-block shrink-0 rounded-full border px-2 py-0.5 text-[11px] ${tone[v]}`}>{VERDICT_LABEL[v]}</span>;
 }
 
-export function Section({ title, en, children }: { title: string; en?: string; children: React.ReactNode }) {
+export function Section({ title, en, children, id }: { title: string; en?: string; children: React.ReactNode; id?: string }) {
   return (
-    <section className="mt-10">
+    <section className="mt-10 scroll-mt-28" id={id}>
       <h2 className="font-serif text-2xl text-ink">
         {title} {en ? <span className="ml-1 text-sm font-normal text-muted">{en}</span> : null}
       </h2>
