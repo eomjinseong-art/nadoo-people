@@ -1,0 +1,20 @@
+import type { Verdict } from "../hughes";
+export type TL = { year: string; text: string; tag?: Verdict };
+export type Story = {
+  slug: string;
+  kicker: string;
+  title: string;
+  lead: string;
+  metaDesc: string;
+  film: { ko: string; en: string; year: number; director: string; cast: string; note: string };
+  images: { src: string; alt: string; credit: string; license: string; page: string; licenseUrl?: string; w: number; h: number }[];
+  glance: string[];
+  careNote?: string;
+  timelines: { id: string; who: string; items: TL[] }[];
+  compare: { topic: string; show: string; real: string; verdict: Verdict }[];
+  people: { name: string; en: string; role: string; real: string; show: string; verdict: Verdict }[];
+  quiz: { q: string; options: string[]; answer: number; why: string }[];
+  sources: [string, string][];
+  uncertain: string[];
+  checklistId: string;
+};

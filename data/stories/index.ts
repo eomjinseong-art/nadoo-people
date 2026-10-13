@@ -1,0 +1,11 @@
+import { HIDDEN_FIGURES } from "./hidden-figures";
+import { JOHN_NASH } from "./john-nash";
+import { SULLENBERGER } from "./sullenberger";
+import { BETHANY } from "./bethany-hamilton";
+import { PHILLIPS } from "./richard-phillips";
+import type { Story } from "./types";
+export type { Story } from "./types";
+export const STORIES: Story[] = [HIDDEN_FIGURES, JOHN_NASH, SULLENBERGER, BETHANY, PHILLIPS];
+export const storyBySlug = (s: string) => STORIES.find((x) => x.slug === s);
+export const STORY_SUBPAGES = ["", "/timeline", "/compare", "/people", "/quiz", "/sources"];
+export const CHECKLIST_TRUE = "https://movie-checklist-sigma.vercel.app/true-stories.html";

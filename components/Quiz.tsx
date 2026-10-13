@@ -5,7 +5,7 @@ import { CoupangCard } from "@/components/CoupangCard";
 
 type QItem = { q: string; options: readonly string[] | string[]; answer: number; why: string };
 
-export function Quiz({ items }: { items?: readonly QItem[] }) {
+export function Quiz({ items, badge }: { items?: readonly QItem[]; badge?: string }) {
   const QUIZ: readonly QItem[] = items ?? HUGHES;
   const [picked, setPicked] = useState<(number | null)[]>(QUIZ.map(() => null));
   const score = picked.filter((p, i) => p === QUIZ[i].answer).length;
@@ -30,7 +30,7 @@ export function Quiz({ items }: { items?: readonly QItem[] }) {
         </fieldset>
       ))}
       <div className="sticky bottom-3 rounded-lg border border-terra bg-bg p-3 text-center text-sm">
-        점수 {score} / {QUIZ.length} {done ? (score >= 10 ? (items ? "· 부츠 장인 👢" : "· 휴즈 박사 ✈") : score >= 6 ? "· 잘했어요!" : "· 다시 해 볼까요?") : ""}
+        점수 {score} / {QUIZ.length} {done ? (score >= (badge ? Math.ceil(QUIZ.length * 0.85) : 10) ? (badge ? `· ${badge}` : items ? "· 부츠 장인 👢" : "· 휴즈 박사 ✈") : score >= 6 ? "· 잘했어요!" : "· 다시 해 볼까요?") : ""}
         {done ? <button type="button" className="ml-3 underline" onClick={() => setPicked(QUIZ.map(() => null))}>다시 풀기</button> : null}
       </div>
       {done ? <CoupangCard /> : null}
