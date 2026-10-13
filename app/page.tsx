@@ -5,6 +5,7 @@ import { Section, Wrap } from "@/components/Ui";
 import { FEATURED, PEOPLE, RECENT } from "@/data/people";
 import { itemListLd, jsonLd, pageMetadata, websiteLd } from "@/lib/seo";
 import { SITE_SUB, SITE_TAGLINE } from "@/lib/site";
+import { CoupangCard } from "@/components/CoupangCard";
 
 export const metadata = pageMetadata({ title: "나두인물", description: `${SITE_TAGLINE}. ${SITE_SUB}`, path: "/" });
 
@@ -18,6 +19,7 @@ export default function Home() {
       <Section title="새로 온 인물" en="Recently added">
         <ul className="grid gap-4 sm:grid-cols-2">{RECENT.slice(0, 4).map((p) => <li key={p.slug}><PersonCard p={p} /></li>)}</ul>
       </Section>
+      <CoupangCard />
       <Section title="추천 인물" en="Featured">
         <ul className="grid gap-4 sm:grid-cols-2">{FEATURED.slice(0, 6).map((p) => <li key={p.slug}><PersonCard p={p} /></li>)}</ul>
       </Section>

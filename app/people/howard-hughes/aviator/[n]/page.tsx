@@ -6,6 +6,7 @@ import { PageHead } from "@/components/PageHead";
 import { Legend, Section, SpoilerNote, VerdictBadge, Wrap } from "@/components/Ui";
 import { CAST, CHAPTERS } from "@/data/hughes";
 import { articleLd, breadcrumbLd, jsonLd, pageMetadata } from "@/lib/seo";
+import { CoupangCard } from "@/components/CoupangCard";
 
 const base = "/people/howard-hughes/aviator";
 export const dynamicParams = false;
@@ -48,6 +49,7 @@ export default async function ChapterPage({ params }: P) {
           {c.scenes.map((s, k) => <li key={k}>{s}</li>)}
         </ul>
       </Section>
+      <CoupangCard />
       <Section title="영화 vs 실제" en="Film vs Reality">
         <Legend />
         <div className="mt-3 space-y-3">
