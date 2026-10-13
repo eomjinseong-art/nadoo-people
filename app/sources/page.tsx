@@ -9,6 +9,8 @@ const SRC = [
   ["Wikipedia: Howard Hughes", "https://en.wikipedia.org/wiki/Howard_Hughes"],
   ["Roger Ebert, The Aviator 리뷰 (2004)", "https://www.rogerebert.com/reviews/the-aviator-2004"],
   ["Wikimedia Commons (퍼블릭 도메인 사진)", "https://commons.wikimedia.org/"],
+  ["사진: TWA 록히드 L-049 콘스텔레이션 N9414H (1952) — Bill Larkins, CC BY-SA 2.0, 위키미디어 공용", "https://commons.wikimedia.org/wiki/File:Lockheed_L-049_Constellation,_Trans_World_Airlines_(TWA)_N9414H_(4851345521).jpg"],
+  ["CC BY-SA 2.0 라이선스", "https://creativecommons.org/licenses/by-sa/2.0/"],
 ];
 export default function Page() {
   return (
@@ -19,7 +21,7 @@ export default function Page() {
         <ul className="list-disc space-y-2 pl-5 text-sm leading-7">
           <li>영화 줄거리는 우리말로 다시 쓴 요약입니다. 대사는 짧게, 확인된 것만 씁니다.</li>
           <li>확인되지 않은 이야기는 ‘전해지는 이야기’로 표시합니다. 자료끼리 다르면 둘 다 적습니다.</li>
-          <li>사진은 퍼블릭 도메인 자료만 쓰고, 출처 링크를 붙입니다.</li>
+          <li>사진은 퍼블릭 도메인 또는 자유 이용 허락(CC BY·CC BY-SA) 자료만 쓰고, 작가·라이선스·출처 링크를 붙입니다.</li>
           <li>잘못된 내용을 찾으면 알려 주세요. 고치겠습니다.</li>
         </ul>
       </Section>

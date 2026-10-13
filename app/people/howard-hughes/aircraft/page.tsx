@@ -12,14 +12,14 @@ import { AIRCRAFT } from "@/data/hughes";
 export default function Page() {
   return (
     <Wrap>{crumbs}
-      <PageHead kicker="AIRCRAFT" title="휴즈의 비행기 도감" lead="사진은 모두 퍼블릭 도메인 자료입니다. 출처 링크를 함께 적었습니다." />
+      <PageHead kicker="AIRCRAFT" title="휴즈의 비행기 도감" lead="사진은 퍼블릭 도메인 또는 CC 라이선스 자료입니다. 작가·라이선스·출처를 함께 적었습니다." />
       <div className="mt-6 space-y-6">
         {AIRCRAFT.map((a) => (
           <article key={a.slug} id={a.slug} className="scroll-mt-28 grid gap-4 rounded-lg border border-line bg-card p-4 sm:grid-cols-[260px_1fr]">
             {a.img ? (
               <figure>
                 <Image src={a.img.src} alt={a.img.alt} width={520} height={360} className="w-full rounded object-cover" />
-                <figcaption className="mt-1 text-[11px] leading-4 text-muted">{a.img.credit} · <a href={a.img.page} className="underline">출처</a></figcaption>
+                <figcaption className="mt-1 text-[11px] leading-4 text-muted">{a.img.credit}{a.img.license ? <> · <a href={a.img.license.url} className="underline" rel="license noopener noreferrer">{a.img.license.name}</a></> : null} · <a href={a.img.page} className="underline">위키미디어 공용</a></figcaption>
               </figure>
             ) : <div className="flex items-center justify-center rounded bg-stone text-4xl" aria-hidden>✈</div>}
             <div>
