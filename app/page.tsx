@@ -20,7 +20,7 @@ export default function Home() {
         {PEOPLE.map((p) => (
           <li key={p.slug}>
             <Link href={`/people/${p.slug}`} className="flex gap-4 rounded-lg border border-line bg-card p-4 hover:border-terra">
-              <Image src={p.img} alt={`${p.name} 사진`} width={96} height={120} className="h-[120px] w-[96px] rounded object-cover grayscale" />
+              <Image src={p.img} alt={p.imgAlt} width={96} height={120} className="h-[120px] w-[96px] rounded object-cover grayscale" />
               <div>
                 <p className="font-serif text-xl">{p.name}</p>
                 <p className="text-xs text-muted">{p.en} · {p.years}</p>

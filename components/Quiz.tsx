@@ -1,8 +1,11 @@
 "use client";
 import { useState } from "react";
-import { QUIZ } from "@/data/hughes";
+import { QUIZ as HUGHES } from "@/data/hughes";
 
-export function Quiz() {
+type QItem = { q: string; options: readonly string[] | string[]; answer: number; why: string };
+
+export function Quiz({ items }: { items?: readonly QItem[] }) {
+  const QUIZ: readonly QItem[] = items ?? HUGHES;
   const [picked, setPicked] = useState<(number | null)[]>(QUIZ.map(() => null));
   const score = picked.filter((p, i) => p === QUIZ[i].answer).length;
   const done = picked.every((p) => p !== null);
@@ -26,7 +29,7 @@ export function Quiz() {
         </fieldset>
       ))}
       <div className="sticky bottom-3 rounded-lg border border-terra bg-bg p-3 text-center text-sm">
-        점수 {score} / {QUIZ.length} {done ? (score >= 10 ? "· 휴즈 박사 ✈" : score >= 6 ? "· 이륙 성공!" : "· 다시 비행해 볼까요?") : ""}
+        점수 {score} / {QUIZ.length} {done ? (score >= 10 ? (items ? "· 부츠 장인 👢" : "· 휴즈 박사 ✈") : score >= 6 ? "· 잘했어요!" : "· 다시 해 볼까요?") : ""}
         {done ? <button type="button" className="ml-3 underline" onClick={() => setPicked(QUIZ.map(() => null))}>다시 풀기</button> : null}
       </div>
     </div>

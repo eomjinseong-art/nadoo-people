@@ -13,6 +13,7 @@ export const NAV = [
   { href: "/people/howard-hughes/timeline", label: "연표" },
   { href: "/people/howard-hughes/aircraft", label: "비행기" },
   { href: "/people/howard-hughes/quiz", label: "퀴즈" },
+  { href: "/people/steve-pateman", label: "스티브 패이트먼" },
   { href: "/sources", label: "출처" },
 ] as const;
 
@@ -20,6 +21,7 @@ export const SISTER_SITES = [
   { href: "https://nadoo-timeline.vercel.app", label: "나두연표" },
   { href: "https://nadoo-world.vercel.app", label: "나두세계" },
   { href: "https://nadoo-arts.vercel.app", label: "나두예술" },
+  { href: "https://nadoo-musical.vercel.app", label: "나두뮤지컬" },
   { href: "https://the-chosen-korean.vercel.app", label: "더 초즌" },
   { href: "https://rome-stories.vercel.app", label: "로마이야기" },
   { href: "https://tinalinkeom.vercel.app", label: "나두 허브" },
