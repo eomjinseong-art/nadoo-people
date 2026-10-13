@@ -219,7 +219,7 @@ export const TIMELINE: { year: string; text: string; tag?: Verdict; after1947?: 
   { year: "1976 이후", text: "‘모르몬 유언장’ 소동. 1978년 네바다 법원이 위조로 판정하고, 유언 없이 죽은 것으로 정리했습니다. 재산은 친척들에게 나뉘었습니다.", after1947: true },
 ];
 
-export type Aircraft = { slug: string; name: string; en: string; year: string; img?: { src: string; alt: string; credit: string; page: string }; facts: string[]; inFilm: string };
+export type Aircraft = { slug: string; name: string; en: string; year: string; img?: { src: string; alt: string; credit: string; page: string; license?: { name: string; url: string } }; facts: string[]; inFilm: string };
 
 export const AIRCRAFT: Aircraft[] = [
   {
@@ -248,6 +248,7 @@ export const AIRCRAFT: Aircraft[] = [
   },
   {
     slug: "constellation", name: "록히드 콘스텔레이션", en: "Lockheed Constellation", year: "1943",
+    img: { src: "/img/constellation-twa.jpg", alt: "1952년 샌프란시스코 공항 정비 구역의 TWA 록히드 L-049 콘스텔레이션 ‘스타 오브 레바논’(N9414H)", credit: "사진: Bill Larkins, 1952년 샌프란시스코 공항 (TWA ‘Star of Lebanon’, N9414H)", page: "https://commons.wikimedia.org/wiki/File:Lockheed_L-049_Constellation,_Trans_World_Airlines_(TWA)_N9414H_(4851345521).jpg", license: { name: "CC BY-SA 2.0", url: "https://creativecommons.org/licenses/by-sa/2.0/" } },
     facts: ["꼬리날개가 세 개인 여압 여객기. 휴즈와 TWA가 개발을 이끌었습니다.", "TWA를 국제선 항공사로 키운 비행기입니다."],
     inFilm: "6장. 촬영에는 복원된 실제 TWA 슈퍼 콘스텔레이션이 쓰였습니다.",
   },
