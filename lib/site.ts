@@ -7,15 +7,14 @@ export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://nadoo-peopl
 export const COUPANG_URL = "https://link.coupang.com/a/hsdzLh1vB6";
 
 export const NAV = [
-  { href: "/", label: "인물" },
-  { href: "/people/howard-hughes", label: "하워드 휴즈" },
-  { href: "/people/howard-hughes/aviator", label: "에비에이터" },
-  { href: "/people/howard-hughes/timeline", label: "연표" },
-  { href: "/people/howard-hughes/aircraft", label: "비행기" },
-  { href: "/people/howard-hughes/quiz", label: "퀴즈" },
-  { href: "/people/steve-pateman", label: "스티브 패이트먼" },
-  { href: "/sources", label: "출처" },
+  { href: "/", label: "홈" },
+  { href: "/people", label: "인물 전체" },
+  { href: "/fields", label: "분야별" },
+  { href: "/eras", label: "시대별" },
+  { href: "/search", label: "검색" },
 ] as const;
+
+export const FOOTER_LINKS = [...NAV, { href: "/sources", label: "출처" }] as const;
 
 export const SISTER_SITES = [
   { href: "https://nadoo-timeline.vercel.app", label: "나두연표" },

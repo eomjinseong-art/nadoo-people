@@ -11,7 +11,7 @@ export function CoupangBanner() {
         className="flex items-center gap-3 rounded-md border border-line bg-card px-4 py-3 text-sm text-ink transition-colors hover:border-terra hover:text-terra"
       >
         <span className="shrink-0 rounded-sm border border-line px-1.5 py-0.5 text-[10px] tracking-wider text-muted">광고</span>
-        <span className="min-w-0 flex-1">비행기를 통째로 사던 억만장자도 있었죠. 우리는 장바구니부터 · 로켓배송은 나무 비행기보다 빨리 뜹니다 · 쿠팡 둘러보기</span>
+        <span className="min-w-0 flex-1">세상을 바꾼 사람들도 시작은 작은 장바구니였을지 몰라요 · 전설은 못 돼도 로켓배송은 내일 도착 · 쿠팡 둘러보기</span>
         <span aria-hidden="true" className="shrink-0 text-terra">→</span>
       </a>
       <p className="mt-2 text-[11px] leading-5 text-muted">이 게시물은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.</p>

@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { CoupangBanner } from "@/components/CoupangBanner";
-import { BRAND_LINE, NAV, SISTER_SITES, SITE_NAME } from "@/lib/site";
+import { BRAND_LINE, FOOTER_LINKS, SISTER_SITES, SITE_NAME } from "@/lib/site";
 
 export function Footer() {
   return (
@@ -13,7 +13,7 @@ export function Footer() {
           영화 줄거리는 우리말로 다시 쓴 요약이고, 영화 대사를 길게 옮기지 않습니다. 확인되지 않은 이야기는 ‘전해지는 이야기’로 적습니다. 영화 제목과 상표는 각 권리자의 것이며, 사진은 퍼블릭 도메인 또는 CC 라이선스 자료이며 각 사진에 출처를 적었습니다.
         </p>
         <nav className="mt-4 flex flex-wrap gap-x-4 gap-y-2 text-xs">
-          {NAV.map((i) => (
+          {FOOTER_LINKS.map((i) => (
             <Link key={i.href} href={i.href} className="underline decoration-line hover:text-terra">{i.label}</Link>
           ))}
         </nav>
