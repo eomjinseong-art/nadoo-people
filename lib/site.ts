@@ -23,5 +23,6 @@ export const SISTER_SITES = [
   { href: "https://nadoo-musical.vercel.app", label: "나두뮤지컬" },
   { href: "https://the-chosen-korean.vercel.app", label: "더 초즌" },
   { href: "https://rome-stories.vercel.app", label: "로마이야기" },
+  { href: "https://nadoo-worldwars.vercel.app", label: "세계대전이야기" },
   { href: "https://tinalinkeom.vercel.app", label: "나두 허브" },
 ] as const;
