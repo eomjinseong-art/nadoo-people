@@ -33,6 +33,28 @@ function CareNote({ s }: { s: Story }) {
   return s.careNote ? <p className="mt-4 rounded-md border border-sky/40 bg-sky/5 px-3 py-2 text-sm leading-7">💙 {s.careNote}</p> : null;
 }
 
+function FeaturedLinks({ s, compact = false }: { s: Story; compact?: boolean }) {
+  if (!s.featuredLinks?.length) return null;
+  return (
+    <div className={`rounded-lg border-2 border-terra bg-terra/5 ${compact ? "mt-4 px-3 py-2" : "mt-5 p-4"}`}>
+      <p className="text-xs tracking-[0.14em] text-terra">{compact ? "이어서 읽기" : "이 인물, 이어서 읽기"}</p>
+      <ul className={compact ? "mt-1 flex flex-col gap-1 sm:flex-row sm:flex-wrap sm:gap-x-5" : "mt-2 space-y-2"}>
+        {s.featuredLinks.map((l) => (
+          <li key={l.href}>
+            <a className={`font-semibold text-terra underline ${compact ? "text-sm" : "font-serif text-lg"}`} href={l.href} target="_blank" rel="noopener noreferrer">
+              {l.label}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
+function checklistHref(s: Story) {
+  return s.checklistHref ?? `${CHECKLIST_TRUE}#film-${s.checklistId}`;
+}
+
 export function StoryHub({ s }: { s: Story }) {
   const p = personBySlug(s.slug)!;
   const menu = [
@@ -60,14 +82,24 @@ export function StoryHub({ s }: { s: Story }) {
           <p className="mt-3 text-sm leading-7 text-muted">
             🎬 영화 『{s.film.ko}』 ({s.film.en}, {s.film.year}) · 감독 {s.film.director} · 출연 {s.film.cast}
             <br />📖 {s.film.note}
-            <br />✅ <a className="text-terra underline" href={`${CHECKLIST_TRUE}#film-${s.checklistId}`}>영화봇 ‘실화 영화’ 체크리스트에서 보기</a>
+            <br />✅ <a className="text-terra underline" href={checklistHref(s)}>{s.checklistLabel ?? "영화봇 ‘실화 영화’ 체크리스트에서 보기"}</a>
           </p>
         </div>
       </div>
+      <FeaturedLinks s={s} />
       <CareNote s={s} />
       <Section title="한눈에 보기" en="At a glance">
         <ul className="list-disc space-y-1 pl-5 text-sm leading-7">{s.glance.map((g) => <li key={g}>{g}</li>)}</ul>
       </Section>
+      {s.keyFilms?.length ? (
+        <Section title="대표작" en="Key films">
+          <ul className="space-y-2 text-sm leading-7">
+            {s.keyFilms.map((f) => (
+              <li key={`${f.year}-${f.en}`}><b>{f.year} 『{f.ko}』</b> <span className="text-muted">({f.en})</span> — {f.note}</li>
+            ))}
+          </ul>
+        </Section>
+      ) : null}
       <Section title="둘러보기" en="Explore">
         <div className="grid gap-3 sm:grid-cols-2">{menu.map((m) => <Card key={m.href} href={base(s) + m.href} title={m.title} sub={m.sub}>{m.text}</Card>)}</div>
       </Section>
@@ -80,6 +112,7 @@ export function StoryTimeline({ s }: { s: Story }) {
     <Wrap>
       <StoryCrumbs s={s} label="실제 연표" sub="/timeline" />
       <PageHead kicker="REAL TIMELINE" title={`${s.title} · 실제 연표`} lead="영화가 아니라 기록에 남은 순서대로 정리했습니다. 표시가 붙은 항목은 영화에도 나오는 장면입니다." />
+      <FeaturedLinks s={s} compact />
       {s.timelines.length > 1 ? (
         <nav className="mt-4 flex flex-wrap gap-2 text-sm">{s.timelines.map((t) => <a key={t.id} href={`#${t.id}`} className="rounded-full border border-line px-3 py-1">{t.who.split(" (")[0]}</a>)}</nav>
       ) : null}
@@ -104,6 +137,7 @@ export function StoryCompare({ s }: { s: Story }) {
     <Wrap>
       <StoryCrumbs s={s} label="영화 vs 실제" sub="/compare" />
       <PageHead kicker="FILM VS REAL" title={`『${s.film.ko}』 vs 실제`} lead="영화는 다큐가 아닙니다. 어디까지가 기록이고 어디부터 극적 장치인지 카드로 나눴습니다." />
+      <FeaturedLinks s={s} compact />
       <CareNote s={s} />
       <Legend />
       <div className="mt-6 grid gap-4 sm:grid-cols-2">
@@ -124,6 +158,7 @@ export function StoryPeople({ s }: { s: Story }) {
     <Wrap>
       <StoryCrumbs s={s} label="관련 인물" sub="/people" />
       <PageHead kicker="PEOPLE INVOLVED" title="관련 인물" lead="영화 속 인물이 실존했는지, 이름이나 역할이 바뀌었는지 정리했습니다. 실존 인물의 AI 초상은 쓰지 않습니다." />
+      <FeaturedLinks s={s} compact />
       <Legend />
       <div className="mt-6 grid gap-4 sm:grid-cols-2">
         {s.people.map((x) => (
@@ -144,6 +179,7 @@ export function StoryQuiz({ s }: { s: Story }) {
     <Wrap>
       <StoryCrumbs s={s} label="퀴즈" sub="/quiz" />
       <PageHead kicker="QUIZ" title={`${s.title} 퀴즈 ${s.quiz.length}문제`} lead="정답을 고르면 바로 해설이 나옵니다." />
+      <FeaturedLinks s={s} compact />
       <Quiz items={s.quiz} badge="실화 박사 🎓" />
     </Wrap>
   );
@@ -154,6 +190,7 @@ export function StorySources({ s }: { s: Story }) {
     <Wrap>
       <StoryCrumbs s={s} label="출처" sub="/sources" />
       <PageHead kicker="SOURCES" title="출처와 라이선스" lead="사실 확인에 쓴 자료, 이미지 라이선스, 그리고 확인하지 못한 부분입니다. 인용문은 출처가 확인된 짧은 문장만 썼습니다." />
+      <FeaturedLinks s={s} compact />
       <Section title="참고 자료" en="References">
         <ul className="list-disc space-y-1 pl-5 text-sm leading-7">{s.sources.map(([t, u]) => <li key={u}><a className="underline" href={u}>{t}</a></li>)}</ul>
       </Section>

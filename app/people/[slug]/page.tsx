@@ -11,7 +11,7 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: P) {
   const s = storyBySlug((await params).slug)!;
   const p = personBySlug(s.slug)!;
-  return pageMetadata({ title: `${p.name} ${p.en} · 『${s.film.ko}』의 실제 이야기`, description: s.metaDesc, path: `/people/${s.slug}` });
+  return pageMetadata({ title: s.docTitle ?? `${p.name} ${p.en} · 『${s.film.ko}』의 실제 이야기`, description: s.metaDesc, path: `/people/${s.slug}` });
 }
 export default async function Page({ params }: P) {
   const s = storyBySlug((await params).slug);
