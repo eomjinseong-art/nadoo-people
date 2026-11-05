@@ -17,4 +17,11 @@ export type Story = {
   sources: [string, string][];
   uncertain: string[];
   checklistId: string;
+  /** Overrides the default true-stories anchor when this person is met through a filmography list. */
+  checklistHref?: string;
+  checklistLabel?: string;
+  /** Replaces the default “film’s true story” document title on the overview. */
+  docTitle?: string;
+  featuredLinks?: { href: string; label: string }[];
+  keyFilms?: { year: string; ko: string; en: string; note: string }[];
 };

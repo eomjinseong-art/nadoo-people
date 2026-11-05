@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   title: { default: `${SITE_NAME} · 영화로 만나는 실존 인물`, template: `%s · ${SITE_NAME}` },
   description,
   applicationName: SITE_NAME,
-  keywords: ["나두인물", "Nadoo People", "실존 인물 영화", "에비에이터", "하워드 휴즈", "The Aviator", "Howard Hughes", "실화 영화"],
+  keywords: ["나두인물", "Nadoo People", "실존 인물 영화", "에비에이터", "하워드 휴즈", "The Aviator", "Howard Hughes", "실화 영화", "덴젤 워싱턴", "Denzel Washington"],
   alternates: { canonical: SITE_URL },
   openGraph: { type: "website", locale: "ko_KR", url: SITE_URL, siteName: SITE_NAME, title: `${SITE_NAME} · 영화로 만나는 실존 인물`, description, images: [OG_IMAGE] },
   twitter: { card: "summary_large_image", title: SITE_NAME, description, images: [OG_IMAGE.url] },

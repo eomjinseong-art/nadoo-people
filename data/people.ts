@@ -191,6 +191,35 @@ export const PEOPLE: Person[] = [
       { href: "/sources", label: "출처" },
     ],
   },
+  {
+    slug: "denzel-washington",
+    name: "덴젤 워싱턴",
+    en: "Denzel Washington",
+    years: "1954–",
+    fields: ["영화인"],
+    country: "미국",
+    era: "20세기 후반",
+    works: [
+      { title: "영광의 깃발 (1989)", kind: "영화" },
+      { title: "말콤 X (1992)", kind: "영화" },
+      { title: "허리케인 카터 (1999)", kind: "영화" },
+      { title: "트레이닝 데이 (2001)", kind: "영화" },
+      { title: "펜스 (2016)", kind: "영화" },
+    ],
+    film: "말콤 X (Malcolm X, 1992) · 영광의 깃발 · 트레이닝 데이",
+    oneLine: "오순절 목사의 아들. 영광의 깃발과 트레이닝 데이로 아카데미상을 두 번 받은 배우.",
+    img: "/img/denzel-washington.jpg",
+    imgAlt: "1999년 백악관에서 찍은 덴젤 워싱턴 (퍼블릭 도메인)",
+    added: "2026-11-05",
+    tabs: [
+      { href: "", label: "개요" },
+      { href: "/timeline", label: "실제 연표" },
+      { href: "/compare", label: "영화 vs 실제" },
+      { href: "/people", label: "관련 인물" },
+      { href: "/quiz", label: "퀴즈" },
+      { href: "/sources", label: "출처" },
+    ],
+  },
 ];
 
 export const personBySlug = (s: string) => PEOPLE.find((p) => p.slug === s);
