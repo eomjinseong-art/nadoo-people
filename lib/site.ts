@@ -24,5 +24,6 @@ export const SISTER_SITES = [
   { href: "https://the-chosen-korean.vercel.app", label: "더 초즌" },
   { href: "https://rome-stories.vercel.app", label: "로마이야기" },
   { href: "https://nadoo-worldwars.vercel.app", label: "세계대전이야기" },
+  { href: "https://johnwick-archive.vercel.app/keanu", label: "키아누 리브스 (존 윅 아카이브)" },
   { href: "https://tinalinkeom.vercel.app", label: "나두 허브" },
 ] as const;
