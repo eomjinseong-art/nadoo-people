@@ -1,3 +1,4 @@
+import { NadooAd } from "@/components/NadooAd";
 import Image from "next/image";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { JsonLd } from "@/components/JsonLd";
@@ -40,6 +41,7 @@ export default function Hub() {
           </p>
         </div>
       </div>
+      <NadooAd inline />
       <Section title="둘러보기" en="Explore">
         <div className="grid gap-3 sm:grid-cols-2">
           {MENU.map((m) => (

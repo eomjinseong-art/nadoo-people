@@ -1,3 +1,4 @@
+import { NadooAd } from "@/components/NadooAd";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
@@ -44,6 +45,7 @@ export default async function ChapterPage({ params }: P) {
           {c.plot.map((p, k) => <p key={k}>{p}</p>)}
         </div>
       </Section>
+      <NadooAd inline />
       <Section title="기억할 장면" en="Key scenes">
         <ul className="list-disc space-y-2 pl-5 leading-7">
           {c.scenes.map((s, k) => <li key={k}>{s}</li>)}

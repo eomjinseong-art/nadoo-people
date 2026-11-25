@@ -1,3 +1,4 @@
+import { NadooAd } from "@/components/NadooAd";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { JsonLd } from "@/components/JsonLd";
 import { PageHead } from "@/components/PageHead";
@@ -27,6 +28,7 @@ export default function Page() {
           <li>사후에 전문가들이 남긴 분석들은 강박장애 가능성을 이야기하지만, 직접 진찰한 결과는 아닙니다.</li>
         </ul>
       </Section>
+      <NadooAd inline />
       <Section title="읽을 때 기억할 것" en="Keep in mind">
         <ul className="list-disc space-y-2 pl-5 text-sm leading-7">
           <li>강박장애는 성격이 ‘깔끔한’ 것과 다릅니다. 본인이 원하지 않는 생각과 행동이 반복되어 괴로운 병입니다.</li>

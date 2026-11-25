@@ -1,3 +1,4 @@
+import { NadooAd } from "@/components/NadooAd";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { JsonLd } from "@/components/JsonLd";
@@ -21,6 +22,7 @@ export default function Aviator() {
       <Breadcrumbs items={[{ href: "/", label: "홈" }, { href: "/people/howard-hughes", label: "하워드 휴즈" }, { label: "에비에이터" }]} />
       <PageHead kicker={`THE AVIATOR · ${FILM.year}`} title="에비에이터, 장면별로 따라가기" lead={`${FILM.director} 감독, ${FILM.writer} 각본, ${FILM.runtime}. 1927년 할리우드에서 1947년 H-4 비행까지, 휴즈의 20년을 그립니다.`} />
       <SpoilerNote />
+      <NadooAd inline />
       <Section title="영화 정보" en="About the film">
         <ul className="list-disc space-y-1 pl-5 text-sm leading-7">
           <li>{FILM.awards}</li>

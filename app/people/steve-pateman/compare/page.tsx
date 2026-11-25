@@ -1,3 +1,4 @@
+import { NadooAd } from "@/components/NadooAd";
 import { PageHead } from "@/components/PageHead";
 import { PatemanCrumbs } from "@/components/PatemanCrumbs";
 import { Legend, Section, VerdictBadge, Wrap } from "@/components/Ui";
@@ -10,6 +11,7 @@ export default function Page() {
     <Wrap><PatemanCrumbs label="영화·뮤지컬 vs 실제" path={path} />
       <PageHead kicker="SHOW VS REAL" title="영화·뮤지컬 vs 실제" lead="2005년 영화와 2012년 뮤지컬은 큰 줄거리가 같습니다. 둘 다 실제 이야기를 출발점으로 삼았습니다." />
       <Legend />
+      <NadooAd inline />
       <div className="mt-6 grid gap-4 sm:grid-cols-2">
         {COMPARE.map((c) => (
           <article key={c.topic} className="rounded-lg border border-line bg-card p-4 text-sm leading-7">

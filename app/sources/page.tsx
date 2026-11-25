@@ -1,3 +1,4 @@
+import { NadooAd } from "@/components/NadooAd";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { PageHead } from "@/components/PageHead";
 import { Section, Wrap } from "@/components/Ui";
@@ -17,6 +18,7 @@ export default function Page() {
     <Wrap>
       <Breadcrumbs items={[{ href: "/", label: "홈" }, { label: "출처" }]} />
       <PageHead kicker="SOURCES" title="출처와 원칙" />
+      <NadooAd inline />
       <Section title="원칙">
         <ul className="list-disc space-y-2 pl-5 text-sm leading-7">
           <li>영화 줄거리는 우리말로 다시 쓴 요약입니다. 대사는 짧게, 확인된 것만 씁니다.</li>

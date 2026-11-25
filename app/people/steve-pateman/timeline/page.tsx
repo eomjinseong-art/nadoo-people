@@ -1,3 +1,4 @@
+import { NadooAd } from "@/components/NadooAd";
 import { PageHead } from "@/components/PageHead";
 import { PatemanCrumbs } from "@/components/PatemanCrumbs";
 import { Legend, VerdictBadge, Wrap } from "@/components/Ui";
@@ -10,6 +11,7 @@ export default function Page() {
     <Wrap><PatemanCrumbs label="연표" path={path} />
       <PageHead kicker="REAL STORY TIMELINE" title="실제 이야기 연표" lead="영화는 공장이 살아나며 끝나지만, 실제 공장은 2000년에 문을 닫았습니다." />
       <Legend />
+      <NadooAd inline />
       <ol className="mt-6 border-l-2 border-line pl-5">
         {TIMELINE.map((t, i) => (
           <li key={i} className="relative pb-5">

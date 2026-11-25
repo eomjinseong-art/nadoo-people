@@ -1,3 +1,4 @@
+import { NadooAd } from "@/components/NadooAd";
 import { PageHead } from "@/components/PageHead";
 import { PatemanCrumbs } from "@/components/PatemanCrumbs";
 import { Legend, VerdictBadge, Wrap } from "@/components/Ui";
@@ -10,6 +11,7 @@ export default function Page() {
     <Wrap><PatemanCrumbs label="관련 인물" path={path} />
       <PageHead kicker="PEOPLE" title="관련 인물" lead="실제 사람들과, 극에서 그들이 어떻게 바뀌었는지." />
       <Legend />
+      <NadooAd inline />
       <div className="mt-6 grid gap-4 sm:grid-cols-2">
         {PEOPLE_INVOLVED.map((c) => (
           <article key={c.en} className="rounded-lg border border-line bg-card p-4 text-sm leading-7">
