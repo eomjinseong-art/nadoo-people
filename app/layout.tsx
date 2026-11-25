@@ -14,7 +14,7 @@ const serif = Noto_Serif_KR({ subsets: ["latin"], variable: "--font-noto-serif",
 const description = `${SITE_TAGLINE}. ${SITE_SUB}`;
 
 export const metadata: Metadata = {
-  verification: { google: "LglMaYLzS6dacAPQ5ZgZdPgzdtfLbp_1Rk5vh3WNPlM" },
+  verification: { google: "LglMaYLzS6dacAPQ5ZgZdPgzdtfLbp_1Rk5vh3WNPlM", other: { "naver-site-verification": "dc7fa953aee1fb59bc393c50c8fe07de2525088b" } },
   metadataBase: new URL(SITE_URL),
   title: { default: `${SITE_NAME} · 영화로 만나는 실존 인물`, template: `%s · ${SITE_NAME}` },
   description,
