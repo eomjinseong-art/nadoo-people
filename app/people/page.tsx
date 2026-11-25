@@ -1,3 +1,4 @@
+import { NadooAd } from "@/components/NadooAd";
 import { JsonLd } from "@/components/JsonLd";
 import { PageHead } from "@/components/PageHead";
 import { PeopleBrowser } from "@/components/PeopleBrowser";
@@ -12,6 +13,7 @@ export default function Page() {
     <Wrap>
       <JsonLd data={jsonLd([itemListLd("인물 전체", "/people", PEOPLE.map((p) => ({ name: `${p.name} (${p.en})`, path: `/people/${p.slug}` })))])} />
       <PageHead kicker="ALL PEOPLE" title="인물 전체" lead="분야, 나라, 시대, 관련 작품으로 걸러 보세요." />
+      <NadooAd inline />
       <PeopleBrowser />
     </Wrap>
   );

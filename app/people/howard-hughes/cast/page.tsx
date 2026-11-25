@@ -1,3 +1,4 @@
+import { NadooAd } from "@/components/NadooAd";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { JsonLd } from "@/components/JsonLd";
 import { PageHead } from "@/components/PageHead";
@@ -13,6 +14,7 @@ export default function Page() {
     <Wrap>{crumbs}
       <PageHead kicker="CAST VS REAL" title="배우와 실제 인물" lead="영화 속 인물이 실제로 어떤 사람이었는지, 어디까지 같고 어디서 다른지." />
       <Legend />
+      <NadooAd inline />
       <div className="mt-6 grid gap-4 sm:grid-cols-2">
         {Object.entries(CAST).map(([k, c]) => (
           <article key={k} id={k} className="scroll-mt-28 rounded-lg border border-line bg-card p-4 text-sm leading-7">

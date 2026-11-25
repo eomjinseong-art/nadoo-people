@@ -1,3 +1,4 @@
+import { NadooAd } from "@/components/NadooAd";
 import { PageHead } from "@/components/PageHead";
 import { PatemanCrumbs } from "@/components/PatemanCrumbs";
 import { Section, Wrap } from "@/components/Ui";
@@ -16,6 +17,7 @@ export default function Page() {
           <li>실존 인물의 사진은 자유 이용 허락 자료가 없어 싣지 않았고, AI로 실존 인물을 그리지 않았습니다. 빨간 부츠 그림은 AI 일러스트입니다.</li>
         </ul>
       </Section>
+      <NadooAd inline />
       <Section title="참고 자료">
         <ul className="list-disc space-y-2 pl-5 text-sm leading-7">
           {SOURCES_P.map(([t, u]) => <li key={u}><a href={u} className="underline hover:text-terra" rel="noopener noreferrer" target="_blank">{t}</a></li>)}

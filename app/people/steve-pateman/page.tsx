@@ -1,3 +1,4 @@
+import { NadooAd } from "@/components/NadooAd";
 import Image from "next/image";
 import { JsonLd } from "@/components/JsonLd";
 import { PageHead } from "@/components/PageHead";
@@ -38,6 +39,7 @@ export default function Hub() {
           <p className="mt-2 text-xs text-muted">{FACTORY.spelling}</p>
         </div>
       </div>
+      <NadooAd inline />
       <Section title={LOLA.title} en="Was Lola real?">
         <p className="rounded-md border border-terra/40 bg-terra/5 px-3 py-2 text-sm"><b>{LOLA.short}</b></p>
         <ul className="mt-3 space-y-2 text-sm leading-7">

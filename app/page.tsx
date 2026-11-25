@@ -1,3 +1,4 @@
+import { NadooAd } from "@/components/NadooAd";
 import Link from "next/link";
 import { JsonLd } from "@/components/JsonLd";
 import { PersonCard } from "@/components/PersonCard";
@@ -16,6 +17,7 @@ export default function Home() {
       <p className="text-xs tracking-[0.2em] text-terra">NADOO PEOPLE · 영화로 만나는 실존 인물</p>
       <h1 className="mt-2 font-serif text-4xl leading-tight">영화 한 편으로 시작해서,<br />한 사람의 진짜 삶까지.</h1>
       <p className="mt-4 max-w-3xl leading-8 text-muted">{SITE_SUB}</p>
+      <NadooAd inline />
       <Section title="새로 온 인물" en="Recently added">
         <ul className="grid gap-4 sm:grid-cols-2">{RECENT.slice(0, 4).map((p) => <li key={p.slug}><PersonCard p={p} /></li>)}</ul>
       </Section>
